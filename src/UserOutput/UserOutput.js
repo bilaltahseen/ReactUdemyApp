@@ -4,16 +4,20 @@ import { render } from "@testing-library/react";
 const userOutput = props => {
   const style = {
     backgroundColor: "gray",
-    color: "white"
+    color: "white",
+    fontSize: 40
   };
   return (
-    <div>
-      <p style={style}>
-        Welcome User:
-        {props.username}
-        {props.children}
-      </p>
-    </div>
+    (style.backgroundColor = props.username),
+    (
+      <div>
+        <p style={style}>
+          The Color is :{props.username}
+          <br></br>
+          {props.children}
+        </p>
+      </div>
+    )
   );
 };
 
